@@ -14,7 +14,7 @@ class IndexPage extends React.Component {
   io = null;
   componentDidMount = () => {
 
-    this.io = new socket("ws://127.0.0.1:3000");
+    this.io = new socket("ws://chat.guolh.com");
     this.io.on('connect', () => {
       this.io.send('我来o了');
       this.io.on('message', (msg) => {
