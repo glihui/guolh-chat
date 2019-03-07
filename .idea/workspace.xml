@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c37fc239-7d08-40bc-b5b1-bdb0ee29cf71" name="Default Changelist" comment="" />
+    <list default="true" id="c37fc239-7d08-40bc-b5b1-bdb0ee29cf71" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -29,7 +31,7 @@
           <entry key="editorconfig" value="1" />
           <entry key="eslintrc" value="1" />
           <entry key="gitignore" value="3" />
-          <entry key="html" value="1" />
+          <entry key="html" value="2" />
           <entry key="js" value="9" />
           <entry key="json" value="3" />
           <entry key="webpackrc" value="1" />
@@ -38,7 +40,7 @@
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CSS" value="2" />
-          <entry key="HTML" value="1" />
+          <entry key="HTML" value="2" />
           <entry key="JSON" value="4" />
           <entry key="JavaScript" value="9" />
           <entry key="PLAIN_TEXT" value="5" />
@@ -94,10 +96,15 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="216">
-              <caret line="9" selection-start-line="9" selection-end-line="10" selection-end-column="14" />
+            <state relative-caret-position="144">
+              <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
             </state>
           </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dist/index.html">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
@@ -144,6 +151,9 @@
       </file>
     </leaf>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
@@ -151,6 +161,7 @@
         <option value="$PROJECT_DIR$/.webpackrc" />
         <option value="$PROJECT_DIR$/src/routes/IndexPage.css" />
         <option value="$PROJECT_DIR$/src/routes/IndexPage.js" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -175,6 +186,7 @@
     <option name="width" value="1322" />
     <option name="height" value="741" />
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
@@ -187,6 +199,11 @@
             <path>
               <item name="guolh-chat" type="b2602c69:ProjectViewProjectNode" />
               <item name="guolh-chat" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="guolh-chat" type="b2602c69:ProjectViewProjectNode" />
+              <item name="guolh-chat" type="462c0819:PsiDirectoryNode" />
+              <item name="dist" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -227,12 +244,12 @@
       <workItem from="1551795159468" duration="1893000" />
       <workItem from="1551878969560" duration="511000" />
       <workItem from="1551884977011" duration="434000" />
-      <workItem from="1551964195795" duration="5269000" />
+      <workItem from="1551964195795" duration="5914000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="9530000" />
+    <option name="totallyTimeSpent" value="10175000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="102" width="1322" height="741" extended-state="0" />
@@ -347,10 +364,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/dist/index.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="9" selection-start-line="9" selection-end-line="10" selection-end-column="14" />
+        <state relative-caret-position="144">
+          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
         </state>
       </provider>
     </entry>
