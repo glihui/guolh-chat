@@ -15,12 +15,17 @@ class IndexPage extends React.Component {
   componentDidMount = () => {
 
     this.io = new socket("ws://chat.guolh.com:3000");
+    // this.io = new socket("ws://127.0.0.1:3000");
     this.io.on('connect', () => {
       this.io.send({'content': 'spl'});
       this.io.on('message', (msg) => {
         console.log(msg);
         this.setState({
           chatContent : [...this.state.chatContent, msg]
+        }, () => {
+          setTimeout(() =>{
+            document.getElementById("chatBoxDiv").scrollTop = document.getElementById("chatBoxDiv").scrollHeight;
+          }, 500);
         });
       })
     });
@@ -30,15 +35,18 @@ class IndexPage extends React.Component {
       type: 'content/fetchContent',
       payload : {},
     }).then(() => {
-      var chatList = this.props.content.chatList.data ? this.props.content.chatList.data : [];
+      var chatList = this.props.content.chatList != undefined ? this.props.content.chatList.data : [];
       console.log(chatList)
       this.setState({
         chatContent : chatList
+      }, () => {
+        setTimeout(() =>{
+          document.getElementById("chatBoxDiv").scrollTop = document.getElementById("chatBoxDiv").scrollHeight;
+        }, 500);
       });
       }
     );
 
-    console.log('s');
 
 
   }
@@ -63,6 +71,10 @@ class IndexPage extends React.Component {
       payload : {
         chatList: this.state.msgValue
       },
+    }).then(() => {
+      this.setState({
+        msgValue: ""
+      });
     })
 
 
@@ -71,15 +83,18 @@ class IndexPage extends React.Component {
 
   render() {
     console.log(this.state.chatContent);
-    var chatList = this.props.content.chatList.data ? this.props.content.chatList.data : [];
-    console.log(chatList);
     return (
       <div className={styles.bigChat}>
-        <div className={styles.chatBox}>
+        <div className={styles.chatBox} id="chatBoxDiv">
           {
             this.state.chatContent.map((item, index) => {
               return (
-                <div key={index}>{item.content}</div>
+                <div key={index} className={styles.chatDiv}>
+                  <div className={styles.avatar}>
+                    <img src={require('../assets/qq.jpg')}/>
+                  </div>
+                  <div className={styles.chatItem}>{item.content}</div>
+                </div>
               );
             })
           }

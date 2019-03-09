@@ -7,11 +7,13 @@ export function query() {
 
 export function content() {
   return request('http://chat.guolh.com:3000/api/chatContent');
+  // return request('http://127.0.0.1:3000/api/chatContent');
 }
 
 export function addContent(body) {
   return request(
     'http://chat.guolh.com:3000/api/saveChatContent',
+    // 'http://127.0.0.1:3000/api/saveChatContent',
     {
       method: 'POST',
       headers: {
