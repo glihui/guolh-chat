@@ -16,14 +16,30 @@ class IndexPage extends React.Component {
 
     this.io = new socket("ws://chat.guolh.com:3000");
     this.io.on('connect', () => {
-      this.io.send('我来o了');
+      this.io.send({'content': 'spl'});
       this.io.on('message', (msg) => {
         console.log(msg);
         this.setState({
           chatContent : [...this.state.chatContent, msg]
         });
       })
-    })
+    });
+
+    console.log(this.props)
+    this.props.dispatch({
+      type: 'content/fetchContent',
+      payload : {},
+    }).then(() => {
+      var chatList = this.props.content.chatList.data ? this.props.content.chatList.data : [];
+      console.log(chatList)
+      this.setState({
+        chatContent : chatList
+      });
+      }
+    );
+
+    console.log('s');
+
 
   }
 
@@ -41,18 +57,29 @@ class IndexPage extends React.Component {
 
   sendMsg = () => {
     console.log(this.state.msgValue);
-    this.io.send(this.state.msgValue);
+    // this.io.send(this.state.msgValue);
+    this.props.dispatch({
+      type: 'content/fetchAddContent',
+      payload : {
+        chatList: this.state.msgValue
+      },
+    })
+
+
   }
 
 
   render() {
+    console.log(this.state.chatContent);
+    var chatList = this.props.content.chatList.data ? this.props.content.chatList.data : [];
+    console.log(chatList);
     return (
       <div className={styles.bigChat}>
         <div className={styles.chatBox}>
           {
             this.state.chatContent.map((item, index) => {
               return (
-                <div key={index}>{item}</div>
+                <div key={index}>{item.content}</div>
               );
             })
           }
@@ -69,7 +96,12 @@ class IndexPage extends React.Component {
 }
 
 
-IndexPage.propTypes = {
+
+function mapStateToProps(state){  //见名知意，把state转换为props
+  //可以打印state看看数据结构，然后放到data里
+  return {
+    content: state.content
+  };
 };
 
-export default connect()(IndexPage);
+export default connect(mapStateToProps)(IndexPage);
