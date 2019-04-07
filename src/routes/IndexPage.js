@@ -23,8 +23,8 @@ class IndexPage extends React.Component {
       })
     }
 
-    // this.io = new socket("ws://chat.guolh.com:3000");
-    this.io = new socket("ws://127.0.0.1:3000");
+    this.io = new socket("ws://chat.guolh.com:3000");
+    // this.io = new socket("ws://127.0.0.1:3000");
     this.io.on('connect', () => {
       this.io.send({'content': 'spl'});
       this.io.on('message', (msg) => {
