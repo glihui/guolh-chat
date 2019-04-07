@@ -63,9 +63,13 @@
   background: white;
   overflow: auto;
   padding-bottom: 40px;
+  box-sizing: border-box;
 }
 .chatDiv{
-
+  text-align: left;
+}
+.chatDivRight{
+  text-align: right;
 }
 .avatar{
   width: 30px;
@@ -73,7 +77,24 @@
   display: inline-block;
   padding-top: 10px;
   margin-left: 5px;
-  float: left;
+  /*float: right;*/
+}
+.avatarRight{
+  float: right;
+}
+.username{
+  color: cornflowerblue;
+  width: 200px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+}
+.usernameLeft{
+  padding-left: 5px;
+}
+.usernameRight{
+  padding-right: 5px;
 }
 .avatar img{
   width: 30px;
@@ -81,6 +102,7 @@
 }
 .chatItem{
   display: inline-block;
+  /*float: right;*/
   /*height: 40px;*/
   background: cornflowerblue;
   border-radius: 5px;

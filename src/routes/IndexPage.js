@@ -14,8 +14,17 @@ class IndexPage extends React.Component {
   io = null;
   componentDidMount = () => {
 
-    this.io = new socket("ws://chat.guolh.com:3000");
-    // this.io = new socket("ws://127.0.0.1:3000");
+    console.log(this.props.auth.auth.data);
+    if (this.props.auth.auth.data == undefined) {
+      console.log(window.localStorage.getItem('auth'));
+      this.props.dispatch({
+        type: 'auth/updateUser',
+        payload : JSON.parse(window.localStorage.getItem('auth')),
+      })
+    }
+
+    // this.io = new socket("ws://chat.guolh.com:3000");
+    this.io = new socket("ws://127.0.0.1:3000");
     this.io.on('connect', () => {
       this.io.send({'content': 'spl'});
       this.io.on('message', (msg) => {
@@ -47,8 +56,6 @@ class IndexPage extends React.Component {
       }
     );
 
-
-
   }
 
   componentWillMount = () => {
@@ -69,7 +76,11 @@ class IndexPage extends React.Component {
     this.props.dispatch({
       type: 'content/fetchAddContent',
       payload : {
-        chatList: this.state.msgValue
+        chatList: {
+          user_id: this.props.auth.auth.data.user_id,
+          content:this.state.msgValue,
+          user: this.props.auth.auth.data
+        },
       },
     }).then(() => {
       this.setState({
@@ -78,20 +89,32 @@ class IndexPage extends React.Component {
     })
 
 
+
+
   }
 
 
   render() {
-    console.log(this.state.chatContent);
+    console.log(this.props.auth.auth.data);
+    let authData = this.props.auth.auth.data;
     return (
       <div className={styles.bigChat}>
         <div className={styles.chatBox} id="chatBoxDiv">
           {
             this.state.chatContent.map((item, index) => {
               return (
-                <div key={index} className={styles.chatDiv}>
-                  <div className={styles.avatar}>
-                    <img src={require('../assets/qq.jpg')}/>
+                <div key={index} className={authData != undefined && authData.user_id == item.user_id ?
+                  styles.chatDivRight : styles.chatDiv}>
+                  <div className={`${styles.avatar} ${
+                    authData != undefined && authData.user_id == item.user_id ?
+                      styles.avatarRight : ''
+                    }`}>
+                    <div className={`${styles.username} ${authData != undefined && authData.user_id == item.user_id ?
+                    styles.usernameRight : styles.usernameLeft}`}>
+                      {item.user.username}
+                    </div>
+                    {/*<img src={`http://localhost:3000/${item.user.avatar}`}/>*/}
+                    <img src={`http://chat.guolh.com/${item.user.avatar}`}/>
                   </div>
                   <div className={styles.chatItem}>{item.content}</div>
                 </div>
@@ -115,7 +138,8 @@ class IndexPage extends React.Component {
 function mapStateToProps(state){  //见名知意，把state转换为props
   //可以打印state看看数据结构，然后放到data里
   return {
-    content: state.content
+    content: state.content,
+    auth: state.auth
   };
 };
 

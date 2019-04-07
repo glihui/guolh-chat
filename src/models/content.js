@@ -9,7 +9,6 @@ export default {
 
   subscriptions: {
     setup({ dispatch, history }) {
-      console.log('skkk')
     },
   },
 
@@ -28,7 +27,7 @@ export default {
     *fetchAddContent({ payload : {chatList} }, { call, put }) {
       console.log('sdd');
       console.log(chatList);
-      serverFun.addContent({content: chatList})
+      serverFun.addContent(chatList)
       // const result = yield call();
       // console.log(result);
       // yield put({

@@ -23,3 +23,31 @@ export function addContent(body) {
     }
   );
 }
+
+export function login(body) {
+  return request(
+    'http://chat.guolh.com:3000/api/login',
+    // 'http://127.0.0.1:3000/api/login',
+    {
+      method: 'POST',
+      headers: {
+        "Content-Type" : "application/x-www-form-urlencoded"
+      },
+      body: stringify(body)
+    }
+  );
+}
+
+export function register(body) {
+  return request(
+    'http://chat.guolh.com:3000/api/register',
+    // 'http://127.0.0.1:3000/api/register',
+    {
+      method: 'POST',
+      headers: {
+        "Content-Type" : "application/x-www-form-urlencoded"
+      },
+      body: stringify(body)
+    }
+  );
+}
