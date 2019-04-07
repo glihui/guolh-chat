@@ -37,7 +37,9 @@ class launchPage extends React.Component {
   //登录
   goLogin = () => {
     let sendData = this.props.form.getFieldsValue();
-    if (sendData.username == '' || sendData.password == '') {
+
+    if (sendData.username == '' || sendData.username == undefined ||
+      sendData.password == '' || sendData.password == undefined) {
       Toast.info('完善表格', 1);
     } else {
 
