@@ -114,7 +114,7 @@ class IndexPage extends React.Component {
                       {item.user.username}
                     </div>
                     {/*<img src={`http://localhost:3000/${item.user.avatar}`}/>*/}
-                    <img src={`http://chat.guolh.com/${item.user.avatar}`}/>
+                    <img src={`http://chat.guolh.com:3000/${item.user.avatar}`}/>
                   </div>
                   <div className={styles.chatItem}>{item.content}</div>
                 </div>
