@@ -63,7 +63,7 @@
         <counts>
           <entry key="css" value="1087" />
           <entry key="html" value="25" />
-          <entry key="js" value="4374" />
+          <entry key="js" value="4384" />
           <entry key="webpackrc" value="34" />
         </counts>
       </usages-collector>
@@ -71,7 +71,7 @@
         <counts>
           <entry key="CSS" value="1087" />
           <entry key="HTML" value="25" />
-          <entry key="JavaScript" value="4374" />
+          <entry key="JavaScript" value="4384" />
           <entry key="PLAIN_TEXT" value="34" />
         </counts>
       </usages-collector>
@@ -131,8 +131,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/models/loginOrRegist.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="380">
-              <caret line="47" column="9" lean-forward="true" selection-start-line="47" selection-start-column="9" selection-end-line="47" selection-end-column="9" />
+            <state relative-caret-position="265">
+              <caret line="43" column="19" selection-start-line="43" selection-start-column="19" selection-end-line="43" selection-end-column="19" />
               <folding>
                 <element signature="e#0#49#0" expanded="true" />
               </folding>
@@ -361,12 +361,12 @@
       <workItem from="1554449998021" duration="3634000" />
       <workItem from="1554512921628" duration="4279000" />
       <workItem from="1554605061768" duration="11516000" />
-      <workItem from="1555122455977" duration="3420000" />
+      <workItem from="1555122455977" duration="3666000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="54499000" />
+    <option name="totallyTimeSpent" value="54745000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="74" y="56" width="1322" height="810" extended-state="0" />
@@ -580,8 +580,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/models/loginOrRegist.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="47" column="9" lean-forward="true" selection-start-line="47" selection-start-column="9" selection-end-line="47" selection-end-column="9" />
+        <state relative-caret-position="265">
+          <caret line="43" column="19" selection-start-line="43" selection-start-column="19" selection-end-line="43" selection-end-column="19" />
           <folding>
             <element signature="e#0#49#0" expanded="true" />
           </folding>
