@@ -105,18 +105,20 @@ class IndexPage extends React.Component {
               return (
                 <div key={index} className={authData != undefined && authData.user_id == item.user_id ?
                   styles.chatDivRight : styles.chatDiv}>
-                  <div className={`${styles.avatar} ${
-                    authData != undefined && authData.user_id == item.user_id ?
-                      styles.avatarRight : ''
-                    }`}>
-                    <div className={`${styles.username} ${authData != undefined && authData.user_id == item.user_id ?
+                  <div className={`${styles.username} ${authData != undefined && authData.user_id == item.user_id ?
                     styles.usernameRight : styles.usernameLeft}`}>
-                      {item.user.username}
-                    </div>
-                    {/*<img src={`http://localhost:3000/${item.user.avatar}`}/>*/}
-                    <img src={`http://chat.guolh.com:3000/${item.user.avatar}`}/>
+                    {item.user.username}
                   </div>
-                  <div className={styles.chatItem}>{item.content}</div>
+                  <div className={styles.avatarAndContent}>
+                    <div className={`${styles.avatar} ${
+                      authData != undefined && authData.user_id == item.user_id ?
+                        styles.avatarRight : ''
+                      }`}>
+                      {/*<img src={`http://localhost:3000/${item.user.avatar}`}/>*/}
+                      <img src={`http://chat.guolh.com:3000/${item.user.avatar}`}/>
+                    </div>
+                    <div className={styles.chatItem}>{item.content}</div>
+                  </div>
                 </div>
               );
             })

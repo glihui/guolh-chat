@@ -37,7 +37,7 @@
   left: 0px;
   bottom: 0px;
   height: 40px;
-  border: black 1px solid;
+  /*border: black 1px solid;*/
   width: 100%;
   display: flex;
 }
@@ -56,11 +56,12 @@
 .bigChat {
   height: 100%;
   width: 100%;
+  background: url("../assets/timg.jpeg") no-repeat;
 }
 .chatBox {
   height: 100%;
   width: 100%;
-  background: white;
+  /*background: white;*/
   overflow: auto;
   padding-bottom: 40px;
   box-sizing: border-box;
@@ -71,20 +72,23 @@
 .chatDivRight{
   text-align: right;
 }
+.avatarAndContent{
+  padding: 5px 0px;
+}
 .avatar{
-  width: 30px;
-  height: 30px;
-  display: inline-block;
-  padding-top: 10px;
-  margin-left: 5px;
-  /*float: right;*/
+  /*width: 30px;*/
+  /*height: 30px;*/
+  /*display: inline-block;*/
+  float: left;
+  margin: 0px 5px;
+
 }
 .avatarRight{
   float: right;
 }
 .username{
   color: cornflowerblue;
-  width: 200px;
+  /*width: 200px;*/
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -106,7 +110,6 @@
   /*height: 40px;*/
   background: cornflowerblue;
   border-radius: 5px;
-  margin: 10px;
   color: white;
   line-height: 40px;
   padding-left: 5px;
