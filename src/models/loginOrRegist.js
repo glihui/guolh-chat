@@ -37,6 +37,7 @@ export default {
     *fetchRegister({ payload: data }, { call, put }) {
       console.log('sdd');
       console.log(data);
+      Toast.loading('加载中...');
       // serverFun.login(data);
       const result = yield serverFun.register(data);
       console.log(result);
